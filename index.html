@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>弹出窗组件</title>
+    <!-- 设置缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果） -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 仅针对IOS的Safari顶端状态条的样式（可选default/black/black-translucent ） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- <div class="g-dialog-contianer">
+    <div class="dialog-window">
+        <div class="dialog-header waiting"></div>
+        <div class="dialog-content">你是否要清空购物车</div>
+        <div class="dialog-footer">
+            <button class="green">确认</button>
+            <button class="red">取消</button>
+            <button>取消</button>
+        </div>
+    </div>
+</div> -->
+    <ul class="btn-list">
+        <li id="btn1">没有传递任何参数（需要手动关闭）</li>
+        <li id="btn2">弹出一个不带任何按钮，且是警告的框，并且2秒后自动关闭</li>
+        <li id="btn3">弹出一个有确认和取消按钮的成功框，点击按钮直接关闭</li>
+        <li id="btn4">弹出一个有确认按钮的警告框，点击按钮不关闭，要手动关闭</li>
+        <li id="btn5">弹出一个多组合的按钮框，按钮样式可定制</li>
+        <li id="btn6">弹出一个确认和删除的框，点击确认弹出加载框2秒自动关闭，点击删除按钮把上一次框关闭</li>
+        <li id="btn7">动画弹框</li>
+        <li id="btn8">延时关闭加回调函数</li>
+        <li id="btn9">允许点击遮罩层可关闭</li>
+    </ul>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/dialog.js"></script>
+    <script>
+    //  var d = $.dialog({
+    //      width:"100",           //对话框宽高
+    //      height:"50",
+    //      message:"加载中……",      //信息框
+    //      type:"waiting",         //对话框类型
+    //      //按钮组配置
+    //     buttons:[
+    //             {
+    //                 type:"red",
+    //                 text:"不好",
+    //                 callback:function(){
+    //                     alert(123);
+    //                     return false;
+    //                 }
+    //             },
+    //             {
+    //                 type:"green",
+    //                 text:"好",
+    //                 callback:function(){
+    //                     alert(2);
+    //                 }
+    //             }
+    //         ],
+    //       delay:3000,             //弹出框延时多久关闭
+    //       maskOpacity:null,       //对话框透明度
+    // });
+
+
+    $("#btn1").tap(function() {
+        var d = $.dialog();
+    });
+    $("#btn2").tap(function() {
+        var d = $.dialog({
+            delay: 2000,
+            //弹框类型
+            type: "warning",
+            //描述文字
+            message: "2秒后自动关闭",
+            //尺寸
+            //width: 200,
+            //对话框遮罩层透明度
+            maskOpacity: 0.5,
+            effect: true
+        })
+    });
+    $("#btn3").tap(function() {
+        var d = $.dialog({
+            //弹框类型
+            type: "ok",
+
+            //按钮组
+            buttons: [{
+                type: "red",
+                text: "确认",
+                callback: function() {
+                    return false;
+                }
+            }, {
+                type: "green",
+                text: "取消",
+                callback: function() {
+                    return true
+                }
+            }],
+            //描述文字
+            message: "点击按钮直接关闭",
+            //尺寸
+            width: 200,
+            //对话框遮罩层透明度
+            maskOpacity: 0.2
+        })
+    });
+    $("#btn4").tap(function() {
+        var d = $.dialog({
+            //弹框类型
+            type: "warning",
+            //按钮组
+            buttons: [{
+                type: "red",
+                text: "确认",
+                callback: function() {
+                    alert("点击我不会关闭！")
+                    return false;
+                }
+            }],
+            //描述文字
+            message: "点击按钮不关闭，要手动关闭",
+            //对话框遮罩层透明度
+            maskOpacity: 0.2
+        })
+    });
+    $("#btn5").tap(function() {
+        var d = $.dialog({
+            //弹框类型
+            type: "waiting",
+            //描述文字
+            message: "你确定要删除购物车吗？",
+            //按钮组
+            buttons: [{
+                type: "green",
+                text: "确定",
+                callback: function() {
+                    $.dialog({
+                        type: "warning",
+                        buttons: [{
+                            type: "red",
+                            text: "点击我关闭",
+                            callback: function() {
+                                d.close();
+                                return true;
+                            }
+                        }]
+                    });
+                }
+            },{
+                text: "删除",
+                callback: function() {
+                    $.dialog({
+                        type: "warning",
+                        buttons: [{
+                            type: "red",
+                            text: "关闭",
+                            callback: function() {
+                                d.close();
+                                return true;
+                            }
+                        }]
+                    });
+                }
+            }, {
+                type: "red",
+                text: "关闭",
+                callback: function() {
+                    return true
+                }
+            }],
+            //对话框遮罩层透明度
+            maskOpacity: 0.2
+        })
+    });
+    $("#btn6").tap(function() {
+        var d = $.dialog({
+            //弹框类型
+            type: "warning",
+
+            //描述文字
+            message: "从小到大变化哦！",
+            //按钮组
+            buttons: [{
+                type: "red",
+                text: "确认",
+                callback: function() {
+                    $.dialog({
+                        type: "waiting",
+                        delay: 2000
+                    });
+                }
+            }, {
+                text: "删除",
+                callback: function() {
+                    return true
+                }
+            }],
+            //对话框遮罩层透明度
+            maskOpacity: 0.2,
+            //是否动画
+            effect: true
+        })
+    });
+    $("#btn7").tap(function() {
+        var d = $.dialog({
+            delay: 2000,
+            //弹框类型
+            type: "ok",
+            //描述文字
+            message: "动画效果",
+            delayCallback: function() {
+                alert("小小的动画")
+            },
+            //对话框遮罩层透明度
+            maskOpacity: 0.2,
+            effect: true
+        })
+    });
+    $("#btn8").tap(function() {
+        var d = $.dialog({
+            type: "warning",
+            delay: 2000,
+            //描述文字
+            message: "延时关闭加回调",
+            delayCallback: function() {
+                alert("我是延时回调");
+            },
+            //对话框遮罩层透明度
+            maskOpacity: 0.2,
+            effect: true
+        })
+    });
+    $("#btn9").tap(function() {
+        var d = $.dialog({
+            type: "warning",
+            //描述文字
+            message: "点击遮罩层关闭",
+            buttons: [{
+                type: "green",
+                text: "确认",
+            }, {
+                text: "删除",
+                callback: function() {
+                    return false;
+                }
+            }],
+            //对话框遮罩层透明度
+            maskOpacity: 0.5,
+            effect: true,
+            maskClose: true
+        })
+    });
+
+    </script>
+</body>
+
+</html>
