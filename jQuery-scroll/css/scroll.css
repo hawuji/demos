@@ -1,0 +1,65 @@
+html{
+    background: #f7f8fa;
+}
+.scroll-content{
+    width: 600px;
+    margin: 50px auto;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+}
+.scroll-tab{
+    background: #efefef;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #c7cddc;
+}
+.tab-item{
+    float: left;
+    padding:0  20px;
+    text-align: center;
+    font-size: 18px;
+    border-right: 1px solid #fff;
+}
+.tab-item.active{
+    border-top: 2px solid #1be374;
+    color: #1BE374;
+    margin: -1px 0;
+    border-bottom: 0;
+    background: #fff;
+}
+.scroll-wrap{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+.scroll-wrap .scroll-cont{
+    height: 100%;
+    padding: 0 15px;
+    overflow: hidden;
+}
+.scroll-cont h3{
+    text-align: center;
+    line-height: 2;
+    font-size: 24px;
+}
+.scroll-cont p{
+    line-height: 1.8;
+    margin-bottom: .8em;
+}
+.scroll-bar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 8px;
+    background: #d6d6d6;
+}
+.scroll-bar .scroll-slider{
+    position: absolute;
+    width: 6px;
+    height: 50px;
+    left: 1px;
+    top: 0;
+    background: #efefef;
+    border-radius: 3px;
+}
