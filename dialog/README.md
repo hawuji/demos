@@ -3,7 +3,7 @@
 - 弹出对话框的按钮样式及个数的自定义
 - 弹出对话框的类型及文字说明
 - 回调函数的实现
-- 演示地址[点击查看](http://hawuji.com/dialog/)，PC端在模拟移动端环境中查看。
+- 演示地址[http://hawuji.github.io/dialog/](http://hawuji.github.io/dialog/)，PC端在模拟移动端环境中查看。
 
 ##默认配置
 ```javascript
