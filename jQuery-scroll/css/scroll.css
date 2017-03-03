@@ -19,6 +19,7 @@ html{
     text-align: center;
     font-size: 18px;
     border-right: 1px solid #fff;
+    cursor:pointer;
 }
 .tab-item.active{
     border-top: 2px solid #1be374;
