@@ -1,6 +1,6 @@
 ##组件介绍
 基于jQuery实现自定义滚动条效果。
-在线演示[http://hawuji.github.io/js-demos/jQuery-scroll/]()
+在线演示[http://hawuji.github.io/js-demos/jQuery-scroll/](http://hawuji.github.io/js-demos/jQuery-scroll/)
 
 ##参数配置
 ```js
