@@ -1,0 +1,134 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 图片展示列表样式 */
+.content{
+    max-width: 800px;
+    margin: 50px auto;
+}
+h1{
+    font-size: 20px;
+    line-height: 2;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+h1 small{
+    font-size: 14px;
+    margin-left: 15px;
+}
+/* 弹出框样式 */
+#lightbox-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+#lightbox-popup{
+    position: fixed;
+    left: 50%;
+    top: 0;
+    margin-left: -250px;
+    width: 500px;
+    background: #9c0;
+    z-index: 10001;
+    display: none;
+}
+.lightbox-pic-view{
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff url(../images/loading.gif) center no-repeat;
+}
+.lightbox-pic-view img{
+    display: block;
+}
+.light-btn{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    z-index: 1;
+}
+.btn-left{
+    left: 0;
+}
+.btn-right{
+    right: 0;
+}
+.btn-show-left{
+    background:  url(../images/prev.png) left center no-repeat;
+}
+.btn-show-right{
+    background:  url(../images/next.png) right center no-repeat;
+}
+.lightbox-pic-caption{
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+    margin-top: -60px;
+}
+.lightbox-caption-area{
+
+    color: #fff;
+    padding: 7px 25px;
+}
+.lightbox-tit{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.lightbox-of-index{
+color: #999;
+}
+.lightbox-close{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    padding: 8px;
+    z-index: 2;
+    background: url(../images/close.png) center no-repeat;
+}
