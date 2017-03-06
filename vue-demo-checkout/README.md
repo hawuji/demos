@@ -8,7 +8,7 @@
 - 设置默认收货地址
 - 选择配送方式
 
-演示地址：[http://hawuji.github.io/js-demos/vue-demo-checkout/chart.html](http://hawuji.github.io/js-demos/vue-demo-checkout/chart.html)
+演示地址：[http://hawuji.github.io/js-demos/vue-demo-checkout/cart.html](http://hawuji.github.io/js-demos/vue-demo-checkout/cart.html)
 ##知识点
 - Vue的基本结构：
 ```js
