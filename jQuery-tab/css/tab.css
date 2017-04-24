@@ -1,0 +1,54 @@
+html {
+  background: #ddd;
+}
+body {
+  padding: 50px;
+}
+.tab-view {
+  float: left;
+  margin-right: 30px;
+}
+.tab-view p {
+  margin-bottom: 20px;
+}
+.tab {
+  width: 300px;
+}
+.tab .tab-nav {
+  height: 30px;
+  line-height: 30px;
+}
+.tab .tab-nav li {
+  float: left;
+  margin-right: 5px;
+  background-color: #757575;
+  border-radius: 3px 3px 0 0;
+}
+.tab .tab-nav li a {
+  display: block;
+  color: #efefef;
+  padding: 0 20px;
+}
+.tab .tab-nav li.active {
+  background: #fff;
+  color: #333;
+}
+.tab .tab-nav li.active a {
+  color: #333;
+}
+.tab .content-wrap {
+  background: #fff;
+  padding: 5px;
+  height: 192px;
+}
+.tab .content-wrap .content-item {
+  height: 200px;
+  display: none;
+  position: absolute;
+}
+.tab .content-wrap .content-item img {
+  width: 290px;
+}
+.tab .content-wrap .current {
+  display: block;
+}

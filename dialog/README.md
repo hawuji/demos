@@ -1,11 +1,11 @@
-##功能说明
+## 功能说明
 - 实现对话框的基本功能
 - 弹出对话框的按钮样式及个数的自定义
 - 弹出对话框的类型及文字说明
 - 回调函数的实现
 - 演示地址[http://hawuji.github.io/js-demos/dialog/](http://hawuji.github.io/js-demos/dialog/)，PC端在模拟移动端环境中查看。
 
-##默认配置
+## 默认配置
 ```javascript
 width: "auto", //对话框宽高
 height: "auto",
@@ -19,7 +19,7 @@ maskClose: null, //点击遮罩层是否关闭
 effect: null //是否开启动画
 ```
 
-##知识点
+## 知识点
 - 弹出框组件的基本结构及参数配置
 - 基本的DOM结构操作
 - 弹性布局的简单应用

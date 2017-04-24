@@ -1,0 +1,54 @@
+html{
+    background: #ddd;
+}
+body{
+    padding:50px;
+}
+.tab-view{
+    float: left;
+    margin-right: 30px;
+    p{
+        margin-bottom: 20px;
+    }
+}
+.tab{
+    width: 300px;
+    .tab-nav{
+        height: 30px;
+        line-height: 30px;
+        li{
+            float: left;
+            margin-right: 5px;
+            background-color: #757575;
+            border-radius: 3px 3px 0 0;
+            a{
+                display: block;
+                color: #efefef;
+                padding: 0 20px;
+            }
+            &.active {
+                background: #fff;
+                color: #333;
+                a{
+                    color: #333;
+                }
+            }
+        }
+    }
+    .content-wrap{
+        background: #fff;
+        padding: 5px;
+        height: 192px;
+        .content-item{
+            height: 200px;
+            display: none;
+            position: absolute;
+            img{
+                width: 290px;
+            }
+        }
+        .current{
+            display: block;
+        }
+    }
+}

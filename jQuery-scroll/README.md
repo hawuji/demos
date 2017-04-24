@@ -1,8 +1,8 @@
-##组件介绍
+## 组件介绍
 基于jQuery实现自定义滚动条效果。
 在线演示[http://hawuji.github.io/js-demos/jQuery-scroll/](http://hawuji.github.io/js-demos/jQuery-scroll/)
 
-##参数配置
+## 参数配置
 ```js
 scrollDir: "y", // 滚动的方向
 contSelector: "", // 滚动内容区选择器
@@ -15,13 +15,13 @@ wheelStep: 10, // 滚轮步长
 correctSelector: "", //校正元素
 articleSelector: "" // 文章选择器
 ```
-##知识点
+## 知识点
 1. 组件封装的思想
 2. 鼠标拖动事件处理
 3. 鼠标滚轮事件处理
 4. 链式调用
 
-##关键词
+## 关键词
 1. extend
 2. pageX , pageY：显示鼠标指针的位置
 3. scrollTop：返回或设置匹配元素的滚动条的垂直位置
