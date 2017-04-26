@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <title>Vue-todoList</title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input @keydown.enter="addTask" class="edit" type="text" v-model="task.content" placeholder="编写任务">
+        <div class="list">
+            <div class="unit" v-for="(item,index) in list">
+                <input @click="changeState(index)" :checked="item.finished" type="checkbox">
+                <span :class="{'finish':item.finished}">{{item.content}}</span>
+                <button @click="removeTask(index)" class="del">删除</button>
+            </div>
+            <p v-if="list.length === 0" class="empty">暂无任务</p>
+        </div>
+    </div>
+    <script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            task: {
+                content: '',
+                finished: false,
+                deleted: false
+            },
+            list: []
+        },
+        methods: {
+            addTask: function() {
+                this.list.push(this.task);
+                this.task = {
+                    content: '',
+                    finished: false,
+                    deleted: false
+                }
+            },
+            changeState: function(index) {
+                let curState = this.list[index].finished;
+                this.list[index].finished = !curState;
+            },
+            removeTask: function(index) {
+                this.list.splice(index, 1);
+            }
+        }
+    });
+    </script>
+    <style>
+    .edit {
+        display: block;
+        width: 80%;
+        height: 35px;
+        line-height: 35px;
+        margin: 30px auto;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 4px;
+        border: 1px solid #ccc;
+        outline: 0;
+        box-shadow: 0 0 5px #ccc;
+    }
+
+    .list {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .unit {
+        position: relative;
+        padding: 10px 0;
+        border-bottom: 1px solid #efefef;
+    }
+
+    .unit:last-child {
+        border-bottom: 0;
+    }
+
+    .finish {
+        text-decoration: line-through;
+        color: #ccc;
+    }
+
+    .del {
+        background: #24292e;
+        text-decoration: none;
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        border: 0;
+        outline: 0;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .empty {
+        font-size: 13px;
+        color: #ccc;
+        text-align: center;
+        padding: 10px 0;
+    }
+    </style>
+</body>
+
+</html>
